@@ -1,1 +1,72 @@
-hey
+Task : 1
+
+Q-1 : Name 5 IT job roles and write one line about what each role does.
+ANS : Here are 5 common IT job roles and what they do:
+1.Software Developer – Designs, builds, and maintains software applications and systems.
+2.System Administrator – Manages and supports an organization's computer systems, servers, and networks.
+3.Network Engineer – Designs, implements, and maintains network infrastructure to ensure reliable connectivity.
+4.Cybersecurity Analyst – Protects computer systems and data by monitoring for threats and implementing security measures.
+5.Database Administrator (DBA) – Manages databases, ensuring data is stored securely, efficiently, and remains accessible to users.
+
+
+Q-2 : List 3 product companies and 3 service companies with one example of work each does.
+ANS : Product Companies
+
+      1. Microsoft – Develops software products such as the Windows operating system.
+      2. Apple – Designs and manufactures products like the iPhone.
+      3. Adobe – Creates software products such as Photoshop for image editing.
+
+> Service Companies
+
+    1. Tata Consultancy Services – Provides software development and IT consulting services for clients.
+    2.Infosys – Offers application development and digital transformation services.
+    3. Wipro – Delivers IT support, cloud, and business process services to organizations.
+
+
+Q-3 : Write the full forms and one-line use of: GitHub, Slack, Jira, IDE, API.
+ANS : 
+1.GitHub
+Full Form: Git-based Hosting Platform
+Use: Used to store, manage, and collaborate on source code projects online.
+
+2.Slack
+Full Form: Searchable Log of All Communication and Knowledge
+Use: Used for team communication and collaboration.
+
+3.Jira
+Full Form: Jira is not an acronym; it is a product name.
+Use: Used to track tasks, bugs, and project progress.
+
+4.IDE
+Full Form: Integrated Development Environment
+Use: Used to write, test, and debug software code.
+
+5.API
+Full Form: Application Programming Interface
+Use: Used to enable communication between different software applications.
+
+
+Q-4 : Name any 5 programming languages and mention one popular use case for each.
+ANS : 
+1. Python
+Popular Use Case: Data science, machine learning, and automation.
+
+2. Java
+Popular Use Case: Enterprise applications and Android app development.
+
+3. JavaScript
+Popular Use Case: Creating interactive websites and web applications.
+
+4. C++
+Popular Use Case: Game development and high-performance software.
+
+5. C#
+Popular Use Case: Developing Windows applications and Unity games.
+
+
+Q-5 : What is the difference between a developer and a tester? Answer in 2 lines.
+ANS : A developer writes, modifies, and maintains software code to build applications and features.
+
+A tester checks the software for bugs, errors, and quality issues to ensure it works correctly before release.
+
+

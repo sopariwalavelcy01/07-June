@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+    int order_id=3434;
+    float price=56.67;
+    int quantity=3;
+    printf("\norder_id: %d",order_id);
+    printf("\n total price: %f",price*quantity);
+    return 0;
+}

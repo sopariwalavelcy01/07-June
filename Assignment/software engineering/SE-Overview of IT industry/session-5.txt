@@ -1,0 +1,45 @@
+Q-1 : Write the Git command for each: initialize a repo, stage all files, commit with a message, push to remote, pull latest changes.
+ANS : 
+1. Initialize a repository: `git init`
+2. Stage all files: `git add .`
+3. Commit with a message: `git commit -m "Your commit message"`
+4. Push to remote repository: `git push origin master`
+5. Pull latest changes: `git pull origin master`
+
+
+Q-2 : What is the difference between git fetch and git pull? Answer in 2 lines.
+ANS : 
+git fetch downloads the latest changes from the remote repository but does not merge them into your local branch.
+git pull downloads the latest changes and automatically merges them into your current local branch.
+
+
+Q-3 : Create a new GitHub repository, push any small text file from your local system, and share the repo link.
+ANS : 
+1.Create a new repository on GitHub (for example: my-first-repo).
+2.Create a text file named sample.txt.
+3.Open Git Bash in that folder and run:
+URL : https://github.com/sopariwalavelcy01/07-June.git
+
+
+Q-4 : What is the difference between a Fork and a Pull Request? Answer in 2 lines.
+ANS : 
+A Fork is a personal copy of someone else's repository that allows you to make changes without affecting the original repository.
+A Pull Request is a request to merge your changes from a fork or branch into the original repository.
+
+
+Q-5 : Create a new branch named feature-test, make one commit on it, and merge it back to the main branch. Write the commands you used.
+ANS :
+git checkout -b feature-test
+echo "Test change" > test.txt
+git add .
+git commit -m "Added test file"
+git checkout master
+git merge feature-test
+
+Commands Used:
+
+1.git checkout -b feature-test – Creates and switches to a new branch.
+2.git add . – Stages all changes.
+3.git commit -m "Added test file" – Creates a commit.
+4.git checkout master – Switches to the master branch.
+5.git merge feature-test – Merges the feature-test branch into master.

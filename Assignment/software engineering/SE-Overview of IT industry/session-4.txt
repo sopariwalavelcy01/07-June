@@ -1,0 +1,66 @@
+Q-1 : List all 6 phases of SDLC in order with one line about each.
+ANS :
+1. Planning
+The project goals, requirements, budget, and timeline are identified and planned.
+
+2. Requirements Analysis
+The needs and expectations of users and stakeholders are gathered and documented.
+
+3. Design
+The system architecture, database structure, and user interface are designed.
+
+4. Development (Implementation)
+Developers write the code and build the software according to the design.
+
+5. Testing
+The software is tested to find and fix bugs, errors, and performance issues.
+
+6. Deployment and Maintenance
+The software is released to users and continuously maintained, updated, and improved.
+
+
+Q-2 : Write 3 differences between Agile and Waterfall models.
+ANS :
+1. Development Process
+ Agile: Development is done in small iterations (sprints).
+ Waterfall: Development follows a sequential, step-by-step process.
+
+2. Requirement Changes
+ Agile: Changes can be made easily during the project.
+ Waterfall: Changes are difficult and costly once development has started.
+
+3. Customer Involvement
+ Agile: Customers are involved throughout the project.
+ Waterfall: Customer involvement is usually limited after the requirements phase.
+
+Q-3 : Name the 3 main Scrum roles and write one line about the responsibility of each.
+ANS : 
+1. Scrum Master
+   Responsible for facilitating the Scrum process, removing obstacles, and helping the team follow Agile practices.
+
+2. Product Owner
+   Responsible for defining product requirements, managing the product backlog, and prioritizing tasks.
+
+3. Development Team
+   Responsible for designing, developing, testing, and delivering the product increment.
+
+
+Q-4 : What is a Sprint in Scrum? Mention its typical duration.
+ANS :
+ A Sprint is a short, fixed period in Scrum during which a specific set of tasks is completed and a working product increment is delivered.
+ The typical duration of a Sprint is 1 to 4 weeks, with 2 weeks being the most commonly used length.
+
+
+Q-5 : What do these Jira board columns mean: To Do, In Progress, Done, Backlog?
+ANS :
+1. Backlog
+   Contains all pending tasks, features, and issues that are planned for future work.
+
+2. To Do
+   Contains tasks that are selected for the current sprint but have not been started yet.
+
+3. In Progress
+   Contains tasks that are currently being worked on by team members.
+
+4. Done
+   Contains tasks that have been completed, tested, and finished successfully.

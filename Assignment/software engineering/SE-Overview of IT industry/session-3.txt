@@ -43,7 +43,7 @@ ANS :
 Using [www.google.com](http://www.google.com) as an example, the DNS hierarchy works as follows:
 
 1. Root Domain (.)
-The root is the highest level in the DNS hierarchy and is represented by a dot (**.**). It directs queries to the appropriate Top-Level Domain (TLD) servers.
+The root is the highest level in the DNS hierarchy and is represented by a dot (.). It directs queries to the appropriate Top-Level Domain (TLD) servers.
 
 2. TLD (Top-Level Domain) – .com
 The .com part is the TLD. It tells DNS which domain registry is responsible for the domain name.
@@ -55,4 +55,4 @@ The google part is the domain name registered under the .com TLD. It identifies 
 The www part is a subdomain of google.com. It is commonly used to identify the web service of the domain.
 
 Hierarchy:
-Root (.) → .com (TLD) → google.com (Domain) → [www.google.com](http://www.google.com) (Subdomain)**.
+The Root (.) → .com (TLD) → google.com (Domain) → [www.google.com](http://www.google.com) (Subdomain).

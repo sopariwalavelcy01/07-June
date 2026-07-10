@@ -5,6 +5,7 @@
 || : Logical OR
 !: Logical NOT
 */
+
 /*
 && is 2 comdition must be true then only it will return true
 || is 1 condition must be true then only it will return true

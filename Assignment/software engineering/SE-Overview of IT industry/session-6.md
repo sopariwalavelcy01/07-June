@@ -26,8 +26,46 @@ ANS : Three Popular Programming Languages
 
 
 Q-3 : Draw a flowchart (on paper or using any online tool) for the process of booking a movie ticket on BookMyShow, starting from opening the app to receiving the booking confirmation.
-ANS : ![Flowchart](image-4.png)
-
+ANS :  
+        START
+          │
+          ▼
+   Open BookMyShow App
+          │
+          ▼
+   Login / Sign Up
+          │
+          ▼
+   Select City
+          │
+          ▼
+   Choose Movie
+          │
+          ▼
+ Select Date & Show Time
+          │
+          ▼
+   Select Seats
+          │
+          ▼
+     Confirm Seats
+          │
+          ▼
+    Make Payment
+          │
+          ▼
+   Payment Successful?
+      ┌────┴────┐
+     Yes        No
+      │          │
+      ▼          ▼
+Receive Booking  Retry Payment
+ Confirmation        │
+      │              │
+      └──────┬───────┘
+             │
+             ▼
+            END
 
 Q-4 :  Write down the steps (as an algorithm, using simple numbered instructions) for ordering food on Swiggy — from opening the app to completing payment.
 ANS :

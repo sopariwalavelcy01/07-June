@@ -1,0 +1,73 @@
+Q-1 :Declare variables for a Flipkart product: productName (as a string), price (float), and rating (double). Assign sample values and print each variable with its data type.
+ANS : 
+#include <stdio.h>
+
+int main()
+{
+    char productName[] = "Samsung Galaxy M35";
+    float price = 19999.99f;
+    double rating = 4.6;
+
+    printf("Product Name (char[]): %s\n", productName);
+    printf("Price (float): %.2f\n", price);
+    printf("Rating (double): %.1lf\n", rating);
+
+    return 0;
+}
+
+OUTPUT : Product Name (char[]): Samsung Galaxy M35
+        Price (float): 19999.99
+        Rating (double): 4.6 
+
+
+Q-2 : Create a constant variable to store the GST rate (for example, 18%) and use it to calculate the final price of a Zomato order with a given base price.
+    <br><br><em><strong>Constraint:</strong> The GST rate must not be changeable after its initial assignment.</em>
+ANS : 
+#include <stdio.h>
+
+int main()
+{
+    const float GST_RATE = 0.18f;   // GST rate (18%) - cannot be changed
+    float basePrice = 500.0f;
+    float finalPrice;
+
+    finalPrice = basePrice + (basePrice * GST_RATE);
+
+    printf("Base Price: %.2f\n", basePrice);
+    printf("GST Rate: %.0f%%\n", GST_RATE * 100);
+    printf("Final Price: %.2f\n", finalPrice);
+
+    return 0;
+}
+
+OUTPUT :  Base Price: 500.00
+          GST Rate: 18%
+          Final Price: 590.00
+
+
+Q-3 : Write a program that stores your favorite Spotify playlist's name (string), total number of songs (int), and average song duration in minutes (float).
+      Print all values in a single formatted sentence.
+ANS : 
+#include <stdio.h>
+
+int main()
+{
+    char playlistName[] = "Top Hits";
+    int totalSongs = 25;
+    float averageDuration = 3.8;
+
+    printf("My favorite Spotify playlist is \"%s\". It contains %d songs with an average duration of %.1f minutes.\n", playlistName, totalSongs, averageDuration);
+
+    return 0;
+}
+
+OUTPUT : My favorite Spotify playlist is "Top Hits". It contains 25 songs with an average duration of 3.8 minutes.
+
+Q-4 : Identify and correct the invalid variable names from this list: 1stPlayer, player_age, $score, total-marks, userName.
+<br><br><em><strong>Hint:</strong> Apply standard variable naming rules for your programming language.</em>
+ANS : 
+1. `1stPlayer` → `firstPlayer` or `player1`
+2. `player_age` → Correct (Valid)
+3. `$score` → `score`
+4. `total-marks` → `totalMarks` or `total_marks`
+5. `userName` → Correct (Valid)

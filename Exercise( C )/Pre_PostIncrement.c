@@ -1,6 +1,11 @@
 #include<stdio.h>
 /*post increment
-Pre increment*/
+Pre increment
+
+Trick:
+x++ (Post-increment)= Use first, Increase later.
+++x (Pre-increment) = Increase first, Use later.
+*/
 int main()
 {
     int a=10;

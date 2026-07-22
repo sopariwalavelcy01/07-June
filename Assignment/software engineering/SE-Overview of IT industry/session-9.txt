@@ -1,0 +1,149 @@
+Q-1 : Create a simple C function called calculateTotal that takes two numbers: itemPrice and quantity, and returns the total bill amount using arithmetic operators.
+ANS :
+#include <stdio.h>
+
+int calculateTotal(int itemPrice, int quantity)
+{
+    return itemPrice * quantity;
+}
+
+int main()
+{
+    int itemPrice = 250;
+    int quantity = 4;
+    int totalBill;
+
+    totalBill = calculateTotal(itemPrice, quantity);
+
+    printf("Item Price: %d\n", itemPrice);
+    printf("Quantity: %d\n", quantity);
+    printf("Total Bill: %d\n", totalBill);
+
+    return 0;
+}
+
+OUTPUT :  Item Price: 250
+          Quantity: 4
+          Total Bill: 1000  
+
+
+Q-2 : Build a Flipkart-style discount calculator: given product price, discount percentage, and a boolean isMember, use arithmetic and
+      logical operators to calculate the final price (apply an extra 5% off if isMember is true).
+ANS : 
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+    float productPrice = 5000.0;
+    float discountPercentage = 20.0;
+    bool isMember = true;
+    float finalPrice;
+
+    finalPrice = productPrice - (productPrice * discountPercentage / 100);
+
+    if (isMember)
+    {
+        finalPrice = finalPrice - (finalPrice * 5 / 100);
+    }
+
+    printf("Original Price: %.2f\n", productPrice);
+    printf("Discount: %d%%\n", discountPercentage);
+    printf("Member: Yes\n");
+    printf("Final Price: %.2f\n", finalPrice);
+
+    return 0;
+}
+
+OUTPUT : 
+Original Price: 5000.00
+Discount: 20%
+Member: Yes
+Final Price: 3800.00
+
+
+Q-1 : Write a function isEligibleForOffer that takes a user's age and total order value, and returns true if the user is 18 or older AND the order value is above 500, otherwise false.
+      <br><br><em><strong>Hint:</strong> Use relational and logical operators together.</em>
+ANS : #include <stdio.h>
+#include <stdbool.h>
+
+bool isEligibleForOffer(int age, float orderValue)
+{
+    return (age >= 18 && orderValue > 500);
+}
+
+int main()
+{
+    int age = 20;
+    float orderValue = 750.0;
+
+    if (isEligibleForOffer(age, orderValue))
+    {
+        printf("Eligible for Offer");
+    }
+    else
+    {
+        printf("Not Eligible for Offer");
+    }
+
+    return 0;
+}
+
+OUTPUT  :
+Eligible for Offer
+
+
+Q-4 : Given three variables: likes, comments, and shares (all numbers), write code to check if a post is 'trending' on Instagram (at least 1000 likes OR more than 200 comments AND at least 50 shares). Print the result.
+ANS : 
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+    int likes = 1200;
+    int comments = 250;
+    int shares = 60;
+
+    if (likes >= 1000 || (comments > 200 && shares >= 50))
+    {
+        printf("Post is Trending");
+    }
+    else
+    {
+        printf("Post is Not Trending");
+    }
+
+    return 0;
+}
+
+OUTPUT : 
+Post is Trending
+
+
+Q-4 : Write a code snippet that demonstrates the difference between pre-increment (++count) and post-increment (count++) by logging the values before and after using both on a followerCount variable.
+ANS :
+#include <stdio.h>
+
+int main()
+{
+    int followerCount = 100;
+
+    printf("Initial follower count: %d\n", followerCount);
+
+    // Post-increment
+    printf("Post-increment: %d\n", followerCount++);
+    printf("Follower count after post-increment: %d\n", followerCount);
+
+    // Pre-increment
+    printf("Pre-increment: %d\n", ++followerCount);
+    printf("Follower count after pre-increment: %d\n", followerCount);
+
+    return 0;
+}
+
+ANS :
+Initial follower count: 100
+Post-increment: 100
+Follower count after post-increment: 101
+Pre-increment: 102
+Follower count after pre-increment: 102

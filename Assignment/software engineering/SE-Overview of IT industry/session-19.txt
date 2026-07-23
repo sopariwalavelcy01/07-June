@@ -1,0 +1,102 @@
+Q-1 : Given the following buggy code meant to calculate the total price of a Zomato order, identify and fix the syntax and runtime errors:<br><br>let items = ["Burger", "Pizza", "Fries"];<br>let prices = [120, 250, 90];<br>let total = 0;<br>for (i = 0; i < items.length; i++) {<br> total =+ prices[i]<br>}<br>console.log("Total price is: " + total);<br><br><em><strong>Hint:</strong> Watch for assignment and loop variable issues.</em>
+ANS :
+The errors are:
+
+i should be declared using let.
+total =+ prices[i] is incorrect. It should be total += prices[i];.
+Add a semicolon after total += prices[i];.
+
+let items = ["Burger", "Pizza", "Fries"];
+let prices = [120, 250, 90];
+let total = 0;
+
+for (let i = 0; i < items.length; i++) {
+    total += prices[i];
+}
+
+console.log("Total price is: " + total);
+
+OUTPUT :
+Total price is: 460
+
+
+Q-2  : Rewrite the following code to improve its indentation and add comments explaining each step, so that a beginner can understand what it does:<br><br>function isEven(num){if(num%2==0){return true;}else{return false;}}
+ANS  : 
+// Function to check whether a number is even or odd
+function isEven(num)
+{
+    // Check if the number is divisible by 2
+    if (num % 2 == 0)
+    {
+        // Return true if the number is even
+        return true;
+    }
+    else
+    {
+        // Return false if the number is odd
+        return false;
+    }
+}
+
+// Example
+console.log(isEven(8));  // true
+console.log(isEven(5));  // false
+
+
+Q-3 : Write a function formatFollowersCount(count) that takes a number and returns a formatted string like Instagram: 1500 as '1.5K', 1200000 as '1.2M', and numbers below 1000 as-is. Add clear comments and use proper indentation.
+ANS  : 
+// Function to format followers count
+function formatFollowersCount(count)
+{
+    // If count is 1,000,000 or more, display in Millions (M)
+    if (count >= 1000000)
+    {
+        return (count / 1000000).toFixed(1) + "M";
+    }
+
+    // If count is 1,000 or more, display in Thousands (K)
+    else if (count >= 1000)
+    {
+        return (count / 1000).toFixed(1) + "K";
+    }
+
+    // If count is less than 1,000, return the number as it is
+    else
+    {
+        return count.toString();
+    }
+}
+
+// Example
+console.log(formatFollowersCount(1500));      // 1.5K
+console.log(formatFollowersCount(1200000));   // 1.2M
+console.log(formatFollowersCount(850));       // 850
+
+
+Q-4 :  You are given a piece of JavaScript code that should print all even numbers from 1 to 10, but it doesn't work as expected:<br><br>for (let i = 1; i <= 10; i++) {<br> if (i % 2 = 0) {<br> console.log(i)<br> }<br>}<br><br>Find and fix the error, then rewrite the code with good indentation and at least one comment explaining the logic.
+ANS :
+The error is:
+
+if (i % 2 = 0) uses the assignment operator =.
+It should use the comparison operator == (or ===).
+
+// Print all even numbers from 1 to 10
+
+for (let i = 1; i <= 10; i++)
+{
+    // Check if the number is even
+    if (i % 2 == 0)
+    {
+        console.log(i);
+    }
+}
+
+Output:
+
+2
+4
+6
+8
+10
+
+

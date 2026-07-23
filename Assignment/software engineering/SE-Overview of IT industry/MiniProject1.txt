@@ -1,0 +1,340 @@
+Q-1 : Create a console-based app called Music Listening Logger that allows users to enter the number of minutes they listened to music each day for a week and stores this data in an array.
+ANS :
+#include <stdio.h>
+
+int main()
+{
+    int minutes[7];
+    int i;
+
+    printf("Enter music listening minutes for 7 days:\n");
+
+    for(i = 0; i < 7; i++)
+    {
+        printf("Day %d: ", i + 1);
+        scanf("%d", &minutes[i]);
+    }
+
+    printf("\nMusic Listening Log:\n");
+
+    for(i = 0; i < 7; i++)
+    {
+        printf("Day %d: %d minutes\n", i + 1, minutes[i]);
+    }
+
+    return 0;
+}
+
+OUTPUT :
+
+Enter music listening minutes for 7 days:
+Day 1: 30
+Day 2: 45
+Day 3: 60
+Day 4: 20
+Day 5: 50
+Day 6: 40
+Day 7: 35
+
+Music Listening Log:
+Day 1: 30 minutes
+Day 2: 45 minutes
+Day 3: 60 minutes
+Day 4: 20 minutes
+Day 5: 50 minutes
+Day 6: 40 minutes
+Day 7: 35 minutes
+
+
+Q-2 : Add a menu-driven interface to your Music Listening Logger so users can choose to log new listening minutes, view their weekly summary, or exit the app.<br><br><em><strong>Hint:</strong> Use a loop to repeatedly show the menu until the user selects exit.</em>
+ANS :  
+#include <stdio.h>
+
+int main()
+{
+    int minutes[7];
+    int choice, i;
+
+    while(1)
+    {
+        printf("\n===== Music Listening Logger =====\n");
+        printf("1. Log Listening Minutes\n");
+        printf("2. View Weekly Summary\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch(choice)
+        {
+            case 1:
+                printf("Enter listening minutes for 7 days:\n");
+                for(i = 0; i < 7; i++)
+                {
+                    printf("Day %d: ", i + 1);
+                    scanf("%d", &minutes[i]);
+                }
+                break;
+
+            case 2:
+                printf("\nWeekly Music Listening Summary:\n");
+                for(i = 0; i < 7; i++)
+                {
+                    printf("Day %d: %d minutes\n", i + 1, minutes[i]);
+                }
+                break;
+
+            case 3:
+                printf("Exiting...\n");
+                return 0;
+
+            default:
+                printf("Invalid Choice!\n");
+        }
+    }
+
+    return 0;
+}
+
+OUTPUT :
+
+===== Music Listening Logger =====
+1. Log Listening Minutes
+2. View Weekly Summary
+3. Exit
+Enter your choice: 1
+
+Enter listening minutes for 7 days:
+Day 1: 30
+Day 2: 45
+Day 3: 60
+Day 4: 20
+Day 5: 50
+Day 6: 40
+Day 7: 35
+
+===== Music Listening Logger =====
+1. Log Listening Minutes
+2. View Weekly Summary
+3. Exit
+Enter your choice: 2
+
+Weekly Music Listening Summary:
+Day 1: 30 minutes
+Day 2: 45 minutes
+Day 3: 60 minutes
+Day 4: 20 minutes
+Day 5: 50 minutes
+Day 6: 40 minutes
+Day 7: 35 minutes
+
+
+Q-3 : Implement file handling in your Music Listening Logger so that when the user logs their daily listening minutes, the data is saved to a file named music_log.txt for persistence.
+ANS :
+#include <stdio.h>
+
+int main()
+{
+    int minutes[7];
+    int i;
+    FILE *fp;
+
+    // Open file in write mode
+    fp = fopen("music_log.txt", "w");
+
+    if(fp == NULL)
+    {
+        printf("File could not be opened.\n");
+        return 0;
+    }
+
+    printf("Enter music listening minutes for 7 days:\n");
+
+    for(i = 0; i < 7; i++)
+    {
+        printf("Day %d: ", i + 1);
+        scanf("%d", &minutes[i]);
+
+        // Save data to file
+        fprintf(fp, "Day %d: %d minutes\n", i + 1, minutes[i]);
+    }
+
+    fclose(fp);
+
+    printf("Music listening data saved successfully to music_log.txt\n");
+
+    return 0;
+}
+
+OUTPUT :
+music_log.txt:
+
+Day 1: 30 minutes
+Day 2: 45 minutes
+Day 3: 60 minutes
+Day 4: 20 minutes
+Day 5: 50 minutes
+Day 6: 40 minutes
+Day 7: 35 minutes
+
+
+Q-4 :  Add a feature to your app that reads the saved music_log.txt file and generates a weekly report showing the total, average, and highest listening minutes in the week.
+ANS  :
+#include <stdio.h>
+
+int main()
+{
+    FILE *fp;
+    int day, minutes;
+    int total = 0, highest = 0;
+    float average;
+
+    fp = fopen("music_log.txt", "r");
+
+    if(fp == NULL)
+    {
+        printf("File not found!\n");
+        return 0;
+    }
+
+    // Read data from file
+    while(fscanf(fp, "Day %d: %d minutes", &day, &minutes) == 2)
+    {
+        total += minutes;
+
+        if(minutes > highest)
+        {
+            highest = minutes;
+        }
+    }
+
+    fclose(fp);
+
+    average = total / 7.0;
+
+    printf("\n===== Weekly Music Report =====\n");
+    printf("Total Listening Time   : %d minutes\n", total);
+    printf("Average Per Day        : %.2f minutes\n", average);
+    printf("Highest Listening Time : %d minutes\n", highest);
+
+    return 0;
+}
+
+OUTPUT :
+Day 1: 30 minutes
+Day 2: 45 minutes
+Day 3: 60 minutes
+Day 4: 20 minutes
+Day 5: 50 minutes
+Day 6: 40 minutes
+Day 7: 35 minutes
+
+Output:
+
+===== Weekly Music Report =====
+Total Listening Time   : 280 minutes
+Average Per Day        : 40.00 minutes
+Highest Listening Time : 60 minutes
+
+
+Q-5 : Refactor your Music Listening Logger to allow users to reset their weekly data by clearing the array and deleting the contents of music_log.txt.<br><br><em><strong>Constraint:</strong> Make sure the reset option is available in the menu and asks for confirmation before deleting data.</em>
+ANS : #include <stdio.h>
+
+int main()
+{
+    int minutes[7] = {0};
+    int choice, i, confirm;
+    FILE *fp;
+
+    while(1)
+    {
+        printf("\n===== Music Listening Logger =====\n");
+        printf("1. Log Listening Minutes\n");
+        printf("2. View Weekly Summary\n");
+        printf("3. Reset Weekly Data\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch(choice)
+        {
+            case 1:
+                fp = fopen("music_log.txt", "w");
+
+                if(fp == NULL)
+                {
+                    printf("File could not be opened!\n");
+                    break;
+                }
+
+                printf("Enter listening minutes for 7 days:\n");
+
+                for(i = 0; i < 7; i++)
+                {
+                    printf("Day %d: ", i + 1);
+                    scanf("%d", &minutes[i]);
+                    fprintf(fp, "Day %d: %d minutes\n", i + 1, minutes[i]);
+                }
+
+                fclose(fp);
+                printf("Data saved successfully.\n");
+                break;
+
+            case 2:
+                printf("\nWeekly Summary:\n");
+
+                for(i = 0; i < 7; i++)
+                {
+                    printf("Day %d: %d minutes\n", i + 1, minutes[i]);
+                }
+                break;
+
+            case 3:
+                printf("Are you sure you want to reset all data?\n");
+                printf("Press 1 for Yes, 0 for No: ");
+                scanf("%d", &confirm);
+
+                if(confirm == 1)
+                {
+                    for(i = 0; i < 7; i++)
+                    {
+                        minutes[i] = 0;
+                    }
+
+                    fp = fopen("music_log.txt", "w");
+                    if(fp != NULL)
+                    {
+                        fclose(fp);
+                    }
+
+                    printf("Weekly data has been reset successfully.\n");
+                }
+                else
+                {
+                    printf("Reset cancelled.\n");
+                }
+                break;
+
+            case 4:
+                printf("Exiting...\n");
+                return 0;
+
+            default:
+                printf("Invalid Choice!\n");
+        }
+    }
+
+    return 0;
+}
+
+OUTPUT :
+===== Music Listening Logger =====
+1. Log Listening Minutes
+2. View Weekly Summary
+3. Reset Weekly Data
+4. Exit
+Enter your choice: 3
+
+Are you sure you want to reset all data?
+Press 1 for Yes, 0 for No: 1
+
+Weekly data has been reset successfully.

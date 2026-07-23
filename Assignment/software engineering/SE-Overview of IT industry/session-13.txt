@@ -1,0 +1,167 @@
+Q-1 : Declare a function called getUserInitials that takes a user's full name (like 'Virat Kohli') and returns their initials in uppercase (e.g., 'VK'). Call this function with your favorite cricketer's name and print the result.
+ANS :
+#include <stdio.h>
+
+void getUserInitials(char name[])
+{
+    printf("Initials: %c%c\n", name[0], name[7]);
+}
+
+int main()
+{
+    char name[] = "Virat Kohli";
+
+    getUserInitials(name);
+
+    return 0;
+}  
+
+OUTPUT :
+Initials: VK
+
+
+Q-2 : Create a function addToCart that takes a shopping cart array and a product name, adds the product to the cart, and prints the updated cart. Demonstrate how passing the cart array by reference allows changes to persist outside the function.<br><br><em><strong>Hint:</strong> In languages like JavaScript, arrays are passed by reference. 
+      In C/C++, use pointers for reference behavior.</em>
+ANS :
+#include <stdio.h>
+#include <string.h>
+
+void addToCart(char cart[][20], int *count, char product[])
+{
+    strcpy(cart[*count], product);
+    (*count)++;
+
+    printf("\nUpdated Cart:\n");
+    for(int i = 0; i < *count; i++)
+    {
+        printf("%s\n", cart[i]);
+    }
+}
+
+int main()
+{
+    char cart[10][20] = {"Laptop", "Mouse"};
+    int count = 2;
+
+    addToCart(cart, &count, "Keyboard");
+
+    printf("\nCart in Main Function:\n");
+    for(int i = 0; i < count; i++)
+    {
+        printf("%s\n", cart[i]);
+    }
+
+    return 0;
+}
+
+OUTPUT :
+Updated Cart:
+Laptop
+Mouse
+Keyboard
+
+Cart in Main Function:
+Laptop
+Mouse
+Keyboard
+
+
+Q-3 : Write two functions: increaseFollowersByValue and increaseFollowersByReference. Each should take a followers count and add 1000 to it, but one should use pass-by-value and the other pass-by-reference. 
+      Show how the original followers count changes (or doesn't) after calling each function.
+ANS :
+#include <stdio.h>
+
+void increaseFollowersByValue(int followers)
+{
+    followers = followers + 1000;
+    printf("Inside Pass by Value: %d\n", followers);
+}
+
+void increaseFollowersByReference(int *followers)
+{
+    *followers = *followers + 1000;
+    printf("Inside Pass by Reference: %d\n", *followers);
+}
+
+int main()
+{
+    int followers = 5000;
+
+    printf("Original Followers: %d\n", followers);
+
+    increaseFollowersByValue(followers);
+    printf("After Pass by Value: %d\n", followers);
+
+    increaseFollowersByReference(&followers);
+    printf("After Pass by Reference: %d\n", followers);
+
+    return 0;
+}
+
+OUTPUT :
+Original Followers: 5000
+Inside Pass by Value: 6000
+After Pass by Value: 5000
+Inside Pass by Reference: 6000
+After Pass by Reference: 6000
+
+
+Q-4 : Build a function formatPrice that takes a price in rupees and returns a string formatted like Flipkart's price tag (e.g., '₹1,599'). 
+      Use this function to display prices for three different products.
+ANS :
+#include <stdio.h>
+
+void formatPrice(int price)
+{
+    printf("₹%d\n", price);
+}
+
+int main()
+{
+    printf("Product 1 Price: ");
+    formatPrice(1599);
+
+    printf("Product 2 Price: ");
+    formatPrice(2999);
+
+    printf("Product 3 Price: ");
+    formatPrice(499);
+
+    return 0;
+}
+
+OUTPUT :
+Product 1 Price: ₹1599
+Product 2 Price: ₹2999
+Product 3 Price: ₹499
+
+
+Q-5 : Refactor an existing function you wrote above to make it reusable for both product names and usernames (for example, a function that capitalizes the first letter of any string).
+      <br><br><em><strong>Constraint:</strong> The refactored function should work for any string input, not just a specific use case.</em>
+ANS :
+#include <stdio.h>
+#include <ctype.h>
+
+void capitalizeFirstLetter(char str[])
+{
+    str[0] = toupper(str[0]);
+    printf("%s\n", str);
+}
+
+int main()
+{
+    char productName[] = "laptop";
+    char userName[] = "velcy";
+
+    printf("Product Name: ");
+    capitalizeFirstLetter(productName);
+
+    printf("User Name: ");
+    capitalizeFirstLetter(userName);
+
+    return 0;
+}
+
+OUTPUT  :
+Product Name: Laptop
+User Name: Velcy

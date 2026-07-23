@@ -1,0 +1,122 @@
+Q-1 : Declare a 1D array called dailySteps with 7 elements to store your step count for each day of the week, assign sample values, and print each value using a loop.
+ANS :
+#include <stdio.h>
+
+int main()
+{
+    int dailySteps[7] = {5000, 6500, 7000, 8000, 7500, 9000, 10000};
+    int i;
+
+    printf("Daily Step Count:\n");
+
+    for(i = 0; i < 7; i++)
+    {
+        printf("Day %d: %d\n", i + 1, dailySteps[i]);
+    }
+
+    return 0;
+}
+
+OUTPUT :
+Daily Step Count:
+Day 1: 5000
+Day 2: 6500
+Day 3: 7000
+Day 4: 8000
+Day 5: 7500
+Day 6: 9000
+Day 7: 10000
+
+
+Q-2 : Create a 2D array called playlistRatings to store ratings for 3 Spotify playlists over 5 days (rows = playlists, columns = days). Fill it with sample numbers and print the ratings for the second playlist.
+ANS :
+#include <stdio.h>
+
+int main()
+{
+    int playlistRatings[3][5] =
+    {
+        {5, 4, 5, 4, 5},
+        {3, 4, 5, 4, 3},
+        {5, 5, 4, 5, 5}
+    };
+
+    int i;
+
+    printf("Ratings for Second Playlist:\n");
+
+    for(i = 0; i < 5; i++)
+    {
+        printf("%d ", playlistRatings[1][i]);
+    }
+
+    return 0;
+}
+
+OUTPUT :
+Ratings for Second Playlist:
+3 4 5 4 3
+
+
+Q-3 : Build a function that takes a 1D array of 7 integers representing your daily Zomato order amounts and calculates the average spend for the week.<br><br><em><strong>Hint:</strong> Use a loop to sum the values, then divide by the array length.</em>
+ANS :
+#include <stdio.h>
+
+float averageSpend(int orders[], int size)
+{
+    int i, sum = 0;
+
+    for(i = 0; i < size; i++)
+    {
+        sum = sum + orders[i];
+    }
+
+    return (float)sum / size;
+}
+
+int main()
+{
+    int orders[7] = {250, 300, 150, 400, 350, 200, 450};
+
+    printf("Average Weekly Spend = %.2f\n", averageSpend(orders, 7));
+
+    return 0;
+}
+
+OUTPUT :
+Average Weekly Spend = 300.00
+
+Q-4 : Given a 2D array called cricketScores where each row represents an IPL match and columns represent runs scored by each team, write code to print the highest score from each match.
+ANS :
+#include <stdio.h>
+
+int main()
+{
+    int cricketScores[3][2] =
+    {
+        {180, 175},
+        {210, 195},
+        {165, 170}
+    };
+
+    int i;
+
+    for(i = 0; i < 3; i++)
+    {
+        if(cricketScores[i][0] > cricketScores[i][1])
+        {
+            printf("Highest score in Match %d = %d\n", i + 1, cricketScores[i][0]);
+        }
+        else
+        {
+            printf("Highest score in Match %d = %d\n", i + 1, cricketScores[i][1]);
+        }
+    }
+
+    return 0;
+}
+
+OUTPUT :
+Highest score in Match 1 = 180
+Highest score in Match 2 = 210
+Highest score in Match 3 = 170

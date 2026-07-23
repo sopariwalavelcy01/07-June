@@ -1,0 +1,119 @@
+Q-1 : Declare a string variable called songTitle and assign it the value 'Tum Hi Ho'. Print the length of the string using strlen().
+ANS :
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char songTitle[] = "Tum Hi Ho";
+
+    printf("Song Title: %s\n", songTitle);
+    printf("Length of String: %lu\n", strlen(songTitle));
+
+    return 0;
+}
+
+OUTPUT :
+Song Title: Tum Hi Ho
+Length of String: 9
+
+
+
+Q-2 : Take input for two usernames (as strings) and compare them using strcmp(). Display whether they are the same or different.
+ANS :
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char username1[20], username2[20];
+
+    printf("Enter first username: ");
+    scanf("%s", username1);
+
+    printf("Enter second username: ");
+    scanf("%s", username2);
+
+    if (strcmp(username1, username2) == 0)
+    {
+        printf("Usernames are the same.\n");
+    }
+    else
+    {
+        printf("Usernames are different.\n");
+    }
+
+    return 0;
+}
+
+OUTPUT : 1
+Enter first username: velcy
+Enter second username: velcy
+Usernames are the same.
+
+OUTPUT : 2
+Enter first username: velcy
+Enter second username: virat
+Usernames are different.
+
+
+Q-3 : Copy the string 'Flipkart' into another string variable called shoppingApp using strcpy(), then print the value of shoppingApp.<br><br><em><strong>Hint:</strong> Make sure to declare enough space for the destination string.</em>
+ANS : #include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char appName[] = "Flipkart";
+    char shoppingApp[20];
+
+    strcpy(shoppingApp, appName);
+
+    printf("Shopping App: %s\n", shoppingApp);
+
+    return 0;
+}
+
+OUTPUT :
+Shopping App: Flipkart
+
+
+Q-4 : Build a small script that takes the user's full name as input and creates a username by copying only the first 5 characters using strcpy(). Print the generated username.<br><br><em><strong>Constraint:</strong> If the name is shorter than 5 characters, use the full name as the username.</em>
+ANS : #include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char fullName[50];
+    char username[6];
+
+    printf("Enter your name: ");
+    scanf("%s", fullName);
+
+    if(strlen(fullName) < 5)
+    {
+        strcpy(username, fullName);
+    }
+    else
+    {
+        strncpy(username, fullName, 5);
+        username[5] = '\0';
+    }
+
+    printf("Username: %s\n", username);
+
+    return 0;
+}
+
+OUTPUT : 1
+Enter your name: Virat
+Username: Virat
+
+OUTPUT : 2
+Enter your name: Rohit
+Username: Rohit
+
+OUTPUT : 3
+Enter your name: Ram
+Username: Ram
+
+

@@ -228,7 +228,7 @@ Before using `*ptr`, the program should check that:
 
 Example:
 
-```c
+
 if (ptr != NULL && *ptr != '\0')
 {
     // Safe to access *ptr

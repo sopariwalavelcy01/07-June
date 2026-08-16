@@ -122,7 +122,8 @@ Searching for: iPhone 15 in category: Mobiles
 
 
 Q-4 : Given this code: class MusicPlayer { void play(String song) { System.out.println("Playing: " + song); } } class SpotifyPlayer extends MusicPlayer { void play(String song) { System.out.println("Streaming on Spotify: " + song); } } — Create an object of type MusicPlayer but assign it a SpotifyPlayer instance, then call play(). Explain the output.<br><br><em><strong>Hint:</strong> This tests runtime polymorphism (overriding) and dynamic method dispatch.</em>
-ANS : #include <iostream>
+ANS : 
+#include <iostream>
 #include <string>
 using namespace std;
 

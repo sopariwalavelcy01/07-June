@@ -1,0 +1,156 @@
+Q-1 : Create a Java class called PaymentProcessor with two overloaded methods processPayment(): one that takes only an amount, and one that takes amount and a coupon code. Print which version is called and the final amount in each case.
+ANS :
+#include <iostream>
+#include <string>
+using namespace std;
+
+class PaymentProcessor {
+public:
+    // Overloaded method - amount only
+    void processPayment(float amount) {
+        cout << "Payment without coupon" << endl;
+        cout << "Final Amount: " << amount << endl;
+    }
+
+    // Overloaded method - amount and coupon
+    void processPayment(float amount, string coupon) {
+        cout << "Payment with coupon: " << coupon << endl;
+
+        float finalAmount = amount - 100;
+
+        cout << "Final Amount: " << finalAmount << endl;
+    }
+};
+
+int main() {
+    PaymentProcessor payment;
+
+    payment.processPayment(1000);
+
+    cout << endl;
+
+    payment.processPayment(1000, "SAVE100");
+
+    return 0;
+}
+
+OUTPUT :
+Payment without coupon
+Final Amount: 1000
+
+Payment with coupon: SAVE100
+Final Amount: 900
+
+
+Q-2 : Build two classes, InstagramUploader and YouTubeUploader, each with a method uploadContent(). Both should extend a base class SocialMediaUploader and override uploadContent() to print a message showing how uploading works differently for Instagram and YouTube.
+ANS :
+#include <iostream>
+using namespace std;
+
+class SocialMediaUploader {
+public:
+    virtual void uploadContent() {
+        cout << "Uploading content to social media..." << endl;
+    }
+};
+
+class InstagramUploader : public SocialMediaUploader {
+public:
+    void uploadContent() override {
+        cout << "Uploading photo or reel to Instagram." << endl;
+    }
+};
+
+class YouTubeUploader : public SocialMediaUploader {
+public:
+    void uploadContent() override {
+        cout << "Uploading video to YouTube." << endl;
+    }
+};
+
+int main() {
+    InstagramUploader instagram;
+    YouTubeUploader youtube;
+
+    instagram.uploadContent();
+    youtube.uploadContent();
+
+    return 0;
+}
+
+OUTPUT :
+Uploading photo or reel to Instagram.
+Uploading video to YouTube.
+
+
+Q-3 : Write a function in Java or Python that simulates a Flipkart-style search: overload a method searchProduct() to allow searching by product name or by product name and category. Demonstrate both usages with sample data.
+ANS :
+#include <iostream>
+#include <string>
+using namespace std;
+
+class FlipkartSearch {
+public:
+    // Search by product name
+    void searchProduct(string productName) {
+        cout << "Searching for: " << productName << endl;
+    }
+
+    // Search by product name and category
+    void searchProduct(string productName, string category) {
+        cout << "Searching for: " << productName
+             << " in category: " << category << endl;
+    }
+};
+
+int main() {
+    FlipkartSearch search;
+
+    search.searchProduct("iPhone 15");
+
+    cout << endl;
+
+    search.searchProduct("iPhone 15", "Mobiles");
+
+    return 0;
+}
+
+OUTPUT :
+Searching for: iPhone 15
+
+Searching for: iPhone 15 in category: Mobiles
+
+
+Q-4 : Given this code: class MusicPlayer { void play(String song) { System.out.println("Playing: " + song); } } class SpotifyPlayer extends MusicPlayer { void play(String song) { System.out.println("Streaming on Spotify: " + song); } } — Create an object of type MusicPlayer but assign it a SpotifyPlayer instance, then call play(). Explain the output.<br><br><em><strong>Hint:</strong> This tests runtime polymorphism (overriding) and dynamic method dispatch.</em>
+ANS : #include <iostream>
+#include <string>
+using namespace std;
+
+class MusicPlayer {
+public:
+    virtual void play(string song) {
+        cout << "Playing: " << song << endl;
+    }
+};
+
+class SpotifyPlayer : public MusicPlayer {
+public:
+    void play(string song) override {
+        cout << "Streaming on Spotify: " << song << endl;
+    }
+};
+
+int main() {
+    MusicPlayer* player = new SpotifyPlayer();
+
+    player->play("Perfect");
+
+    delete player;
+
+    return 0;
+}
+
+OUTPUT :
+Streaming on Spotify: Perfect
+
+

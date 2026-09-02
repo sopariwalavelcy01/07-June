@@ -1,0 +1,113 @@
+Q-1 : Create a Content class with properties: title, platform, views, and status. Write a method to display all details of a Content object.
+ANS :
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Content {
+public:
+    string title;
+    string platform;
+    int views;
+    string status;
+
+    void displayDetails() {
+        cout << "Title: " << title << endl;
+        cout << "Platform: " << platform << endl;
+        cout << "Views: " << views << endl;
+        cout << "Status: " << status << endl;
+    }
+};
+
+int main() {
+    Content content;
+
+    content.title = "My First Video";
+    content.platform = "Instagram";
+    content.views = 5000;
+    content.status = "Published";
+
+    content.displayDetails();
+
+    return 0;
+}
+
+OUTPUT :
+Title: My First Video
+Platform: Instagram
+Views: 5000
+Status: Published
+
+
+Q-2 : Build a console menu that lets users add new content ideas (title, platform, views, status) and save each entry to a text file named content_list.txt.<br><br><em><strong>Hint:</strong> Use file handling to append each new content item to the file.</em>
+ANS : 
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+class Content {
+public:
+    string title;
+    string platform;
+    int views;
+    string status;
+
+    void addContent() {
+        cout << "Enter title: ";
+        getline(cin, title);
+
+        cout << "Enter platform: ";
+        getline(cin, platform);
+
+        cout << "Enter views: ";
+        cin >> views;
+        cin.ignore();
+
+        cout << "Enter status: ";
+        getline(cin, status);
+    }
+
+    void saveToFile() {
+        ofstream file("content_list.txt", ios::app);
+
+        file << "Title: " << title << endl;
+        file << "Platform: " << platform << endl;
+        file << "Views: " << views << endl;
+        file << "Status: " << status << endl;
+        file << "-------------------" << endl;
+
+        file.close();
+    }
+};
+
+int main() {
+    int choice;
+
+    do {
+        cout << "\n--- Content Menu ---" << endl;
+        cout << "1. Add New Content" << endl;
+        cout << "2. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        cin.ignore();
+
+        if (choice == 1) {
+            Content content;
+
+            content.addContent();
+            content.saveToFile();
+
+            cout << "Content saved successfully!" << endl;
+        }
+        else if (choice == 2) {
+            cout << "Exiting..." << endl;
+        }
+        else {
+            cout << "Invalid choice!" << endl;
+        }
+
+    } while (choice != 2);
+
+    return 0;
+}

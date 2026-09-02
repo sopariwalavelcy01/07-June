@@ -1,0 +1,2 @@
+Q 1 : Install MySQL Workbench on your computer, connect to the local MySQL server, and take a screenshot of the default databases shown in the Schemas panel.
+ANS : ![MySQL Workbench Screenshot](mysql_workbench.png)
